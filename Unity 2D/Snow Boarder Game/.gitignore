@@ -1,0 +1,50 @@
+# ===============
+# Unity generated
+# ===============
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# User-specific
+[Uu]ser[Ss]ettings/
+
+# Crash Reports
+[Cc]rash[Rr]eports/
+
+# Visual Studio / Rider
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.idea/
+*.csproj
+*.unityproj
+*.pidb
+*.booproj
+
+# Auto-generated JetBrains Rider plugin files
+*.dotSettings
+
+# Mono auto-generated files
+*.sln
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Unity Package Manager
+Packages/
+
+# Ignore Play mode test results
+Assets/Scenes/*.unity
+
+# TextMeshPro generated files
+Assets/TextMesh Pro/
+
+# Uncomment if you have any secret keys in the Assets folder
+# Assets/SecretKeys.asset
