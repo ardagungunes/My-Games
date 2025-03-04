@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         Run();
         FlipSprite();
         ClimbLadder();
-        Bounce();
 
 
     }

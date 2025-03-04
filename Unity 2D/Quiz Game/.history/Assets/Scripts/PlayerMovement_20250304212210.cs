@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         Run();
         FlipSprite();
         ClimbLadder();
-        Bounce();
 
 
     }
@@ -50,8 +49,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Bounce(){
 
-        if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Bouncing"))){
-        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpSpeed * bounceSpeed);
+        if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpSpeed);
         }
     }
 

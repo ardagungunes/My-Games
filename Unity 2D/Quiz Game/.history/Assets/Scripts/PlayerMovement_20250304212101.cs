@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpSpeed = 25f;
     [SerializeField] float runSpeed;
     [SerializeField] float climbSpeed = 3f;
-    [SerializeField] float bounceSpeed = 3f;
+    [Seria]
     float myGravityScale = 8f;
     Vector2 moveInput;
 
@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         Run();
         FlipSprite();
         ClimbLadder();
-        Bounce();
 
 
     }
@@ -49,10 +48,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Bounce(){
-
-        if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Bouncing"))){
-        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpSpeed * bounceSpeed);
-        }
+        Vector2 playerVelocity = new Vector2(rigidbody2D.velocity.x, jumpSpeed * bounceSpeed);
     }
 
     void Run(){
