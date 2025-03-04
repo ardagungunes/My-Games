@@ -48,3 +48,5 @@ Assets/TextMesh Pro/
 
 # Uncomment if you have any secret keys in the Assets folder
 # Assets/SecretKeys.asset
+
+*.history
