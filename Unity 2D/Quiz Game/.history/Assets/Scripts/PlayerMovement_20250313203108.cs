@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Bounce(){
 
-        if(feet.IsTouchingLayers(LayerMask.GetMask("Bouncing"))){
+        if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Bouncing"))){
         rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpSpeed * bounceSpeed);
         }
     }

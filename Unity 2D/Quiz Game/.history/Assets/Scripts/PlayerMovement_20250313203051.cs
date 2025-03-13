@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Bounce(){
 
-        if(feet.IsTouchingLayers(LayerMask.GetMask("Bouncing"))){
+        if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Bouncing"))){
         rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpSpeed * bounceSpeed);
         }
     }
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void ClimbLadder(){
-        if(feet.IsTouchingLayers(LayerMask.GetMask("Ladder"))){
+        if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ladder"))){
         myAnimator.SetBool("isClimbing", true);
         rigidbody2D.gravityScale = 0f;
         Vector2 climbVelocity = new Vector2(rigidbody2D.velocity.x, moveInput.y * climbSpeed);

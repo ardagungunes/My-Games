@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myCollider2D = GetComponent<Collider2D>();
-        feet = GetComponent<BoxCollider2D>();
 
     }
 
@@ -52,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Bounce(){
 
-        if(feet.IsTouchingLayers(LayerMask.GetMask("Bouncing"))){
+        if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Bouncing"))){
         rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpSpeed * bounceSpeed);
         }
     }
@@ -78,13 +77,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Jump(){
-        if(feet.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+        if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"))){
         rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpSpeed);
         }
     }
 
     void ClimbLadder(){
-        if(feet.IsTouchingLayers(LayerMask.GetMask("Ladder"))){
+        if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ladder"))){
         myAnimator.SetBool("isClimbing", true);
         rigidbody2D.gravityScale = 0f;
         Vector2 climbVelocity = new Vector2(rigidbody2D.velocity.x, moveInput.y * climbSpeed);
