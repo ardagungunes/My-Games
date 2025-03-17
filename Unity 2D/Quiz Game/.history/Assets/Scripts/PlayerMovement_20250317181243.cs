@@ -14,14 +14,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float bounceSpeed = 3f;
     bool isAlive = true;
     float myGravityScale = 8f;
-    float flingAmount = 5f;
     Vector2 moveInput;
 
     Rigidbody2D rigidbody2D;
     Animator myAnimator;
     Collider2D myCollider2D;
     BoxCollider2D feet;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -30,16 +28,13 @@ public class PlayerMovement : MonoBehaviour
         myCollider2D = GetComponent<Collider2D>();
         feet = GetComponent<BoxCollider2D>();
 
-
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if(!isAlive){
-            return;
-        }
+        if
 
         Run();
         FlipSprite();
@@ -50,16 +45,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnMove(InputValue value){
-        if(!isAlive){
-            return;
-        }
         moveInput = value.Get<Vector2>();
     }
 
     void OnJump(InputValue value){
-        if(!isAlive){
-            return;
-        }
         if(value.isPressed){
             Jump();
         }
@@ -116,19 +105,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other){
-        if(!isAlive){
-            return;
-        }
-
-        if(other.gameObject.CompareTag("Enemy")){
-            myAnimator.SetTrigger("isDead");
-            Vector2 fling = new Vector2(-Mathf.Sign(rigidbody2D.velocity.x) * flingAmount, 20f);
-            rigidbody2D.velocity = fling;
+    void OnCollisionEnter2D(Collider2D other){
+        if(other.CompareTag("Enemy")){
             isAlive = false;
         }
     }
-
 
 
 

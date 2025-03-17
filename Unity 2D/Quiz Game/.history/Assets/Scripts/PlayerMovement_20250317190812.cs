@@ -123,9 +123,14 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.CompareTag("Enemy")){
             myAnimator.SetTrigger("isDead");
-            Vector2 fling = new Vector2(-Mathf.Sign(rigidbody2D.velocity.x) * flingAmount, 20f);
-            rigidbody2D.velocity = fling;
-            isAlive = false;
+            float flingX = Mathf.Sign(rigidbody2D.velocity.x) * flingAmount;  // No negation of Sign here
+            float flingY = 20f; // You can adjust this as needed
+
+        // Apply the fling force to the player
+        Vector2 fling = new Vector2(flingX, flingY);
+        rigidbody2D.velocity = fling;
+
+        isAlive = false;
         }
     }
 

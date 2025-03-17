@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float bounceSpeed = 3f;
     bool isAlive = true;
     float myGravityScale = 8f;
-    float flingAmount = 5f;
+    float flingAmount = 3f;
     Vector2 moveInput;
 
     Rigidbody2D rigidbody2D;

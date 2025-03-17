@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float bounceSpeed = 3f;
     bool isAlive = true;
     float myGravityScale = 8f;
-    float flingAmount = 5f;
+    float flingAmount = 3f;
     Vector2 moveInput;
 
     Rigidbody2D rigidbody2D;
@@ -117,13 +117,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other){
-        if(!isAlive){
-            return;
-        }
-
         if(other.gameObject.CompareTag("Enemy")){
             myAnimator.SetTrigger("isDead");
-            Vector2 fling = new Vector2(-Mathf.Sign(rigidbody2D.velocity.x) * flingAmount, 20f);
+            Vector2 fling = new Vector2(rigi.velocity.x * flingAmount, 3f);
             rigidbody2D.velocity = fling;
             isAlive = false;
         }
